@@ -79,7 +79,7 @@ def process_and_save_images(model, train_loader, steps):
     labels_tensor = torch.tensor([data[1] for data in transformed_data])
     transformed_dataset = {"images": transformed_images_tensor, "labels": labels_tensor}
     transformed_dataset_path = f"transformed_dataset_{steps}.pth"
-    OUTPUT_PATH = f"{OUTPUT_DIR}/{transformed_dataset_path}"
+    OUTPUT_PATH = f"{SUBFOLDER_PATH}/{transformed_dataset_path}"
 
     torch.save(transformed_dataset, OUTPUT_PATH)  # 딕셔너리 형태로 저장
     print(f"Saved transformed images and labels to {OUTPUT_PATH}")

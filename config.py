@@ -22,15 +22,15 @@ current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 subfolder_name = f"run_{current_time}"
 
 # 최종 경로 생성
-subfolder_path = os.path.join(OUTPUT_DIR, subfolder_name)
+SUBFOLDER_PATH = os.path.join(OUTPUT_DIR, subfolder_name)
 
 # 폴더가 존재하지 않으면 생성
-if not os.path.exists(subfolder_path):
-    os.makedirs(subfolder_path)
+if not os.path.exists(SUBFOLDER_PATH):
+    os.makedirs(SUBFOLDER_PATH)
 
 # 결과 파일 경로
 losses_file_path = "average_losses.txt"
-LOSSES_PATH = os.path.join(subfolder_path, losses_file_path)
+LOSSES_PATH = os.path.join(SUBFOLDER_PATH, losses_file_path)
 
 # GPU 사용 설정
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
