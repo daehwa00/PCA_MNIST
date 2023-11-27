@@ -1,0 +1,1 @@
+Average Loss for 1 steps: 63.9689
